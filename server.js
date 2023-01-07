@@ -6,13 +6,13 @@ require('dotenv').config()
 
 const API_SECRET = process.env.API_SECRET;
 
-app.use((req, res, next) => {
+app.use(cors())
+//app.use((req, res, next) => {
   //console.log("acessou o middleware");
-  res.header('Access-Control-Allow-Origin','http://127.0.0.1:5500')
-  res.header("Access-Control-Allow-Methods", 'GET')
-  app.use(cors())
-  next();
-})
+  //res.header('Access-Control-Allow-Origin','http://127.0.0.1:5500')
+  //res.header("Access-Control-Allow-Methods", 'GET')
+//  next();
+//})
 
 app.get('/:city', async(req, res) => {
   const city = req.params.city;
